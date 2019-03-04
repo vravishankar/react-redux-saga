@@ -29,11 +29,15 @@ class PostForm extends Component<Props, State> {
     };
   }
 
-  handleChange = (e: SyntheticEvent<HTMLInputElement>) => {
-    this.setState({
-      [e.currentTarget.name]: e.currentTarget.value
-    })
-  };
+  handleTitleChange = (e: SyntheticEvent<HTMLInputElement>) => {
+    const title = e.currentTarget.value
+    this.setState(() => ({ title }))
+  }
+
+  handleBodyChange = (e: SyntheticEvent<HTMLInputElement>) => {
+    const body = e.currentTarget.value
+    this.setState(() => ({ body }))
+  }
 
   handleSubmit = (e: SyntheticEvent<*>) => {
     e.preventDefault();
@@ -69,7 +73,7 @@ class PostForm extends Component<Props, State> {
                 type="text"
                 id="title"
                 value={title}
-                onChange={this.handleChange}
+                onChange={this.handleTitleChange}
               />
             </label>
           </div>
@@ -80,7 +84,7 @@ class PostForm extends Component<Props, State> {
                 type="text"
                 id="body"
                 value={body}
-                onChange={this.handleChange}
+                onChange={this.handleBodyChange}
               />
             </label>
           </div>

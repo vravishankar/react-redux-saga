@@ -30,10 +30,11 @@ class EditPostPage extends Component<Props> {
       const { id } = this.props.post
       payload = { ...payload, id }
       this.props.updatePost(payload)
-      navigateTo('/posts')
+      navigateTo('/home')
   }
   render() {
     const { post } = this.props
+    console.log(post)
     return (
       <div>
           <h2>Edit Post</h2>
@@ -45,7 +46,9 @@ class EditPostPage extends Component<Props> {
 
 const mapStateToProps = (state: State, ownProps: OwnProps) => {
     const post = selectCurrentPost(state, Number(ownProps.match.params.id))
-    return post
+    return {
+        post
+    }
 }
 
 const connector: Connector<OwnProps, Props> = connect(mapStateToProps, { updatePost })

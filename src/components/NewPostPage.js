@@ -15,7 +15,7 @@ type Props = {
 class NewPostPage extends Component<Props> {
   handleSubmit = (payload: Payload) => {
       this.props.createPost(payload)
-      navigateTo("/posts")
+      navigateTo("/home")
   }
       
   

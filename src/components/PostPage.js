@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import type { selectCurrentPost } from '../selectors/posts';
+import { selectCurrentPost } from '../selectors/posts';
 
 import type { Connector } from 'react-redux'
 import type { State } from '../types'
