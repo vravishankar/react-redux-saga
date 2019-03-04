@@ -3,7 +3,7 @@
 import axios from 'axios'
 import type { Axios } from 'axios'
 
-const API_ROOT = 'http://localhost:5000/api'
+const API_ROOT = 'https://jsonplaceholder.typicode.com'
 
 class ApiService {
     client: Axios
@@ -21,6 +21,7 @@ class ApiService {
     }
 
     get(path: string) : Promise<Object> | Promise<Array<Object>> {
+        console.log(path)
         return this.client.get(path).then(response => response.data)
     }
 
