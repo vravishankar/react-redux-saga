@@ -7,7 +7,7 @@ function* createPost(action) {
     try {
         const newPost = yield call(createPostInApi, action.payload)
         yield put( { type: 'CREATE_POST_SUCCESS', payload: newPost })
-        navigateTo('/posts')
+        navigateTo('/home/posts')
     } catch (error) {
         yield put( {type: 'CREATE_POST_FAILURE'})
         console.log(error)

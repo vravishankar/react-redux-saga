@@ -10,7 +10,6 @@ export function fetchPostsIfNeeded() {
 }
 
 export function fetchPosts() {
-    console.log('Actions -> FetchPosts')
     return {
         type: FETCH_POSTS
     }

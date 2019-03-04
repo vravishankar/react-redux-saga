@@ -15,7 +15,7 @@ export function createPostInApi(payload: Post) : Promise<Post> {
 }
 
 export function deletePostInApi(id: number) : Promise<number> {
-    return service.delete(`/post/${id}`)
+    return service.delete(`/posts/${id}`)
 }
 
 export function updatePostInApi(payload: Post) : Promise<Post> {

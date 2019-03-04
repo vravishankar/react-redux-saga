@@ -7,7 +7,7 @@ function* updatePost(action) {
     try {
         const updatedPost = yield call(updatePostInApi, action.payload)
         yield put( { type: 'UPDATE_POST_SUCCESS', payload: updatedPost })
-        navigateTo('/posts')
+        navigateTo('/home/posts')
     } catch (error) {
         yield put( {type: 'UPDATE_POST_FAILURE'})
         console.log(error)

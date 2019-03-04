@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import PostsHeading from './PostsHeading';
 import PostsList from './PostsList';
-import { fetchPosts, deletePost } from '../actions/posts'
+import { fetchPostsIfNeeded, fetchPosts, deletePost } from '../actions/posts'
 import { selectPosts } from '../selectors/posts'
 import navigateTo from '../services/navigation'
 
@@ -26,7 +26,7 @@ type Props = {
 class PostsPage extends Component<Props> {
 
   componentDidMount() {
-      this.props.fetchPosts()
+      this.props.fetchPostsIfNeeded()
   }
 
   handleDeletePost = (id: number) => {
@@ -76,6 +76,6 @@ const mapStateToProps = (state: State) => ({
     posts: selectPosts(state)
 })
 
-const connector: Connector<{},Props> = connect(mapStateToProps, { fetchPosts, deletePost });
+const connector: Connector<{},Props> = connect(mapStateToProps, { fetchPostsIfNeeded , fetchPosts, deletePost });
 
 export default connector(PostsPage)
